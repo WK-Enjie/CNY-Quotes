@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐴 马年大吉 2026 - 生肖运势 🏮</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        :root {
+            --neon-pink: #FF10F0;
+            --neon-yellow: #FFFF00;
+            --neon-cyan: #00FFFF;
+            --neon-green: #39FF14;
+            --neon-orange: #FF6600;
+            --neon-purple: #BC13FE;
+        }
+
+        /* Theme Variables */
+        body.theme-wealth {
+            --gradient-1: linear-gradient(45deg, #FFD700, #FF1493, #FF6347, #FFD700);
+            --gradient-2: linear-gradient(135deg, #FF0080, #FFD700, #FF4500);
+            --primary: #FFD700;
+            --secondary: #FF1493;
+            --accent: #00FFFF;
+            --glow: #FFD700;
+            --text-light: #FFFF00;
+            --text-dark: #FF0080;
+        }
+
+        body.theme-love {
+            --gradient-1: linear-gradient(45deg, #FF10F0, #FF69B4, #FF1493, #FF10F0);
+            --gradient-2: linear-gradient(135deg, #FF00FF, #FF69B4, #FF1493);
+            --primary: #FF10F0;
+            --secondary: #FF69B4;
+            --accent: #FFFF00;
+            --glow: #FF00FF;
+            --text-light: #FFB6C1;
+            --text-dark: #8B008B;
+        }
+
+        body.theme-health {
+            --gradient-1: linear-gradient(45deg, #00CED1, #39FF14, #00FFFF, #00CED1);
+            --gradient-2: linear-gradient(135deg, #00FFFF, #39FF14, #40E0D0);
+            --primary: #00FFFF;
+            --secondary: #39FF14;
+            --accent: #FF00FF;
+            --glow: #00FFFF;
+            --text-light: #7FFFD4;
+            --text-dark: #008B8B;
+        }
+
+        body.theme-career {
+            --gradient-1: linear-gradient(45deg, #0080FF, #FF6600, #00BFFF, #0080FF);
+            --gradient-2: linear-gradient(135deg, #1E90FF, #FF8C00, #4169E1);
+            --primary: #0080FF;
+            --secondary: #FF6600;
+            --accent: #39FF14;
+            --glow: #00BFFF;
+            --text-light: #87CEEB;
+            --text-dark: #FF4500;
+        }
+
+        body.theme-family {
+            --gradient-1: linear-gradient(45deg, #FF6347, #FFB347, #FF69B4, #FF6347);
+            --gradient-2: linear-gradient(135deg, #FF8C00, #FFB6C1, #FF4500);
+            --primary: #FF6347;
+            --secondary: #FFB347;
+            --accent: #00FFFF;
+            --glow: #FFA500;
+            --text-light: #FFE4B5;
+            --text-dark: #DC143C;
+        }
+
+        body.theme-wisdom {
+            --gradient-1: linear-gradient(45deg, #BC13FE, #39FF14, #8A2BE2, #BC13FE);
+            --gradient-2: linear-gradient(135deg, #9400D3, #39FF14, #8B008B);
+            --primary: #BC13FE;
+            --secondary: #39FF14;
+            --accent: #FFD700;
+            --glow: #BC13FE;
+            --text-light: #DDA0DD;
+            --text-dark: #4B0082;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: #000;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .kaleidoscope-bg {
+            position: fixed;
+            inset: 0;
+            background: var(--gradient-1);
+            background-size: 400% 400%;
+            animation: kaleidoscope 10s ease infinite;
+            filter: brightness(1.5) contrast(1.2);
+        }
+
+        .kaleidoscope-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-2);
+            background-size: 300% 300%;
+            animation: kaleidoscope 15s ease-in-out infinite reverse;
+            mix-blend-mode: screen;
+            opacity: 0.5;
+        }
+
+        @keyframes kaleidoscope {
+            0% { background-position: 0% 50%; transform: rotate(0deg) scale(1); }
+            33% { background-position: 100% 50%; transform: rotate(120deg) scale(1.1); }
+            66% { background-position: 50% 100%; transform: rotate(240deg) scale(0.9); }
+            100% { background-position: 0% 50%; transform: rotate(360deg) scale(1); }
+        }
+
+        /* Glowing Particles */
+        .glow-particle {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: var(--glow);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow), 0 0 40px var(--glow);
+            pointer-events: none;
+            animation: float-glow 8s infinite;
+        }
+
+        @keyframes float-glow {
+            0%, 100% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            50% { transform: translateY(-100vh) translateX(100px); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .neon-header {
+            text-align: center;
+            padding: 60px 30px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            border-radius: 40px;
+            border: 3px solid var(--primary);
+            margin-bottom: 40px;
+            box-shadow: 0 0 30px var(--glow), inset 0 0 30px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .neon-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, var(--primary), transparent, var(--secondary), transparent);
+            animation: rotate 10s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .year-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: #000;
+            padding: 12px 40px;
+            border-radius: 100px;
+            font-weight: 900;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            box-shadow: 0 0 30px var(--glow), 0 5px 20px rgba(0, 0, 0, 0.5);
+            animation: pulse-glow 2s infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 30px var(--glow), 0 5px 20px rgba(0, 0, 0, 0.5); }
+            50% { box-shadow: 0 0 60px var(--glow), 0 5px 30px rgba(0, 0, 0, 0.5); }
+        }
+
+        h1 {
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease infinite;
+            filter: drop-shadow(0 0 30px var(--glow));
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Theme Selector */
+        .theme-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 30px var(--glow);
+        }
+
+        .theme-btn {
+            padding: 18px 35px;
+            border: 2px solid var(--primary);
+            border-radius: 100px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 0 20px var(--glow), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, var(--primary), transparent);
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+        }
+
+        .theme-btn:hover::before {
+            width: 150%;
+            height: 150%;
+        }
+
+        .theme-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 0 40px var(--glow), 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .theme-btn.active {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: #000;
+            animation: active-pulse 1s infinite;
+        }
+
+        @keyframes active-pulse {
+            0%, 100% { transform: scale(1.05); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Quote Display */
+        .quote-display {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(30px);
+            border: 3px solid var(--primary);
+            border-radius: 40px;
+            padding: 60px 40px;
+            margin: 60px auto;
+            max-width: 1200px;
+            box-shadow: 0 0 50px var(--glow), inset 0 0 30px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-display::before {
+            content: attr(data-icon);
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -60%) scale(1.1); }
+        }
+
+        .quote-text {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            text-align: center;
+            background: linear-gradient(90deg, var(--text-light), var(--primary), var(--text-light));
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: text-shimmer 3s ease infinite;
+            position: relative;
+            z-index: 2;
+            line-height: 1.4;
+        }
+
+        @keyframes text-shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .image-card {
+            position: relative;
+            height: 400px;
+            border-radius: 30px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 30px var(--glow);
+            transition: all 0.5s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 60px var(--glow), 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.2);
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            color: white;
+        }
+
+        .image-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px var(--glow);
+        }
+
+        .image-desc {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Zodiac Section */
+        .zodiac-section {
+            margin: 80px 0;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 40px;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 40px var(--glow);
+        }
+
+        .zodiac-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--text-light), var(--primary), var(--text-light));
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            animation: text-shimmer 3s ease infinite;
+        }
+
+        .zodiac-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        /* Zodiac Grid - 12 animals in symmetrical layout */
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 1400px) {
+            .zodiac-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .zodiac-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .zodiac-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .zodiac-btn {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            padding: 15px;
+        }
+
+        .zodiac-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, var(--glow), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .zodiac-btn:hover::before {
+            opacity: 0.3;
+        }
+
+        .zodiac-btn:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 40px var(--glow), 0 15px 30px rgba(0, 0, 0, 0.5);
+            border-color: var(--secondary);
+        }
+
+        .zodiac-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transform: scale(1.05);
+            box-shadow: 0 0 50px var(--glow), 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .zodiac-btn.active .zodiac-icon,
+        .zodiac-btn.active .zodiac-name,
+        .zodiac-btn.active .zodiac-years {
+            color: #000;
+            text-shadow: none;
+        }
+
+        .zodiac-icon {
+            font-size: 2.8rem;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 0 10px var(--glow));
+        }
+
+        .zodiac-name {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px var(--glow);
+        }
+
+        .zodiac-years {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            opacity: 0.8;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* Fortune Display */
+        .fortune-display {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border: 3px solid var(--secondary);
+            border-radius: 30px;
+            padding: 40px;
+            margin-top: 40px;
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.5s ease;
+            display: none;
+        }
+
+        .fortune-display.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            display: block;
+        }
+
+        .fortune-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--primary);
+            flex-wrap: wrap;
+        }
+
+        .fortune-animal-icon {
+            font-size: 5rem;
+            filter: drop-shadow(0 0 20px var(--glow));
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .fortune-animal-info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .fortune-animal-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px var(--glow);
+        }
+
+        .fortune-animal-years {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .fortune-compatibility {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: #000;
+            font-weight: 700;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+
+        /* Fortune Content Grid */
+        .fortune-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .fortune-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fortune-category {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .fortune-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--glow);
+        }
+
+        .fortune-category-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .fortune-category-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .fortune-rating {
+            display: flex;
+            gap: 3px;
+        }
+
+        .star {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .star.empty {
+            opacity: 0.3;
+        }
+
+        .fortune-category-text {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Lucky Elements */
+        .lucky-elements {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            padding: 35px;
+            margin-top: 30px;
+        }
+
+        .lucky-elements-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 0 0 15px var(--glow);
+        }
+
+        .lucky-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .lucky-item {
+            text-align: center;
+            padding: 20px 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .lucky-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--glow);
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .lucky-item-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .lucky-item-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+
+        .lucky-item-value {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #000;
+            padding: 20px 40px;
+            border-radius: 100px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            box-shadow: 0 0 40px var(--glow), 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: slide-in 0.5s ease;
+            z-index: 1000;
+        }
+
+        @keyframes slide-in {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="theme-wealth">
+    <div class="kaleidoscope-bg"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="neon-header">
+            <div class="year-badge">✨ 2026 马年 ✨</div>
+            <h1 id="mainTitle">恭喜发财</h1>
+            <p class="subtitle" id="subtitle">财源广进 · 金玉满堂 · 富贵吉祥</p>
+        </header>
+
+        <!-- Theme Selector -->
+        <div class="theme-selector">
+            <button class="theme-btn active" onclick="changeTheme('wealth')" data-theme="wealth">
+                <span style="font-size: 1.5rem;">💰</span> 财富
+            </button>
+            <button class="theme-btn" onclick="changeTheme('love')" data-theme="love">
+                <span style="font-size: 1.5rem;">💖</span> 爱情
+            </button>
+            <button class="theme-btn" onclick="changeTheme('health')" data-theme="health">
+                <span style="font-size: 1.5rem;">🌿</span> 健康
+            </button>
+            <button class="theme-btn" onclick="changeTheme('career')" data-theme="career">
+                <span style="font-size: 1.5rem;">🚀</span> 事业
+            </button>
+            <button class="theme-btn" onclick="changeTheme('family')" data-theme="family">
+                <span style="font-size: 1.5rem;">🏠</span> 家庭
+            </button>
+            <button class="theme-btn" onclick="changeTheme('wisdom')" data-theme="wisdom">
+                <span style="font-size: 1.5rem;">🔮</span> 智慧
+            </button>
+        </div>
+
+        <!-- Quote Display -->
+        <div class="quote-display" id="quoteDisplay" data-icon="💰">
+            <div class="quote-text" id="quoteText">财源滚滚来，金银堆满仓！</div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="image-gallery" id="imageGallery"></div>
+
+        <!-- Zodiac Fortune Section -->
+        <div class="zodiac-section">
+            <h2 class="zodiac-title">🌟 十二生肖马年运势 🌟</h2>
+            <p class="zodiac-subtitle">点击你的生肖，查看2026马年专属运势与吉祥指南</p>
+            
+            <!-- Zodiac Grid -->
+            <div class="zodiac-grid">
+                <button class="zodiac-btn" onclick="showZodiacFortune('rat')" data-zodiac="rat">
+                    <div class="zodiac-icon">🐭</div>
+                    <div class="zodiac-name">鼠</div>
+                    <div class="zodiac-years">1984 · 1996<br>2008 · 2020</div>
+                </button>
+                <button class="zodiac-btn" onclick="showZodiacFortune('ox')" data-zodiac="ox">
+                    <div class="zodiac-icon">🐮</div>
+                    <div class="zodiac-name">牛</div>
+                    <div class="zodiac-years">1985 · 1997<br>2009 · 2021</div>
+                </button>
+                <button class="zodiac-btn" onclick="showZodiacFortune('tiger')" data-zodiac="tiger">
+                    <div class="zodiac-icon">🐯</div>
+                    <div class="zodiac-name">虎</div>
+                    <div class="zodiac-years">1986 · 1998<br>2010 · 2022</div>
+                </button>
+                <button class="zodiac-btn" onclick="showZodiacFortune('rabbit')" data-zodiac="rabbit">
+                    <div class="zodiac-icon">🐰</div>
+                    <div class="zodiac-name">兔</div>
+                    <div class="zodiac-years">1987 · 1999<br>2011 · 2023</div>
+                </button>
+                <button class="zodiac-btn" onclick="showZodiacFortune('dragon')" data-zodiac="dragon">
+                    <div class="zodiac-icon">🐲</div>
+                    <div class="zodiac-name">龙</div>
+                    <div class="zodiac-years">1988 · 2000<br>2012 · 2024</div>
+                </button>
+                <button class="zodiac-btn" onclick="showZodiacFortune('snake')" data-zodiac="snake">
+                    <div class="zodiac-icon">🐍</div>
+                    <div class="zodiac-name">蛇</div>
+                    <div class="zodiac-years">1989 · 2001<br>2013 · 2025</div>
+                </button>
+                <button class="zodiac-btn" onclick="showZodiacFortune('horse')" data-zodiac="horse">
+                    <div class="zodiac-icon">🐴</div>
+                    <div class="zodiac-name">马</div>
+                    <div class="zodiac-years">1990 · 2002<br>2014 · 2026</div>
+                </button>
+                <button class="zodiac-btn" onclick="showZodiacFortune('goat')" data-zodiac="goat">
+                    <div class="zodiac-icon">🐐</div>
+                    <div class="zodiac-name">羊</div>
+                    <div class="zodiac-years">1991 · 2003<br>2015 · 2027</div>
+                </button>
+                <button class="zodiac-btn" onclick="showZodiacFortune('monkey')" data-zodiac="monkey">
+                    <div class="zodiac-icon">🐵</div>
+                    <div class="zodiac-name">猴</div>
+                    <div class="zodiac-years">1992 · 2004<br>2016 · 2028</div>
+                </button>
+                <button class="zodiac-btn" onclick="showZodiacFortune('rooster')" data-zodiac="rooster">
+                    <div class="zodiac-icon">🐔</div>
+                    <div class="zodiac-name">鸡</div>
+                    <div class="zodiac-years">1993 · 2005<br>2017 · 2029</div>
+                </button>
+                <button class="zodiac-btn" onclick="showZodiacFortune('dog')" data-zodiac="dog">
+                    <div class="zodiac-icon">🐶</div>
+                    <div class="zodiac-name">狗</div>
+                    <div class="zodiac-years">1994 · 2006<br>2018 · 2030</div>
+                </button>
+                <button class="zodiac-btn" onclick="showZodiacFortune('pig')" data-zodiac="pig">
+                    <div class="zodiac-icon">🐷</div>
+                    <div class="zodiac-name">猪</div>
+                    <div class="zodiac-years">1995 · 2007<br>2019 · 2031</div>
+                </button>
+            </div>
+
+            <!-- Fortune Display -->
+            <div class="fortune-display" id="fortuneDisplay">
+                <div class="fortune-header">
+                    <div class="fortune-animal-icon" id="fortuneIcon">🐭</div>
+                    <div class="fortune-animal-info">
+                        <div class="fortune-animal-title" id="fortuneTitle">属鼠运势</div>
+                        <div class="fortune-animal-years" id="fortuneYears">出生年份：1984 · 1996 · 2008 · 2020</div>
+                        <div class="fortune-compatibility" id="fortuneCompatibility">与马年相合度：中吉 ★★★☆☆</div>
+                    </div>
+                </div>
+
+                <div class="fortune-content" id="fortuneContent"></div>
+
+                <div class="lucky-elements">
+                    <div class="lucky-elements-title">🎯 2026马年幸运指南</div>
+                    <div class="lucky-items" id="luckyItems"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme configurations
+        const themes = {
+            wealth: {
+                title: "恭喜发财",
+                subtitle: "财源广进 · 金玉满堂 · 富贵吉祥",
+                icon: "💰",
+                quotes: [
+                    "财源滚滚来，金银堆满仓！",
+                    "招财进宝，日进斗金！",
+                    "马上有钱，富贵连连！",
+                    "财运亨通，生意兴隆！",
+                    "金马奔腾财运来！"
+                ],
+                images: [
+                    { url: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800", title: "金元宝", desc: "财源滚滚，堆金积玉" },
+                    { url: "https://images.unsplash.com/photo-1549421263-5ec394a5ad4c?w=800", title: "红包雨", desc: "恭喜发财，红包拿来" },
+                    { url: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800", title: "金币满仓", desc: "黄金万两，富可敌国" }
+                ]
+            },
+            love: {
+                title: "爱情甜蜜",
+                subtitle: "情投意合 · 白头偕老 · 永结同心",
+                icon: "💖",
+                quotes: [
+                    "爱情甜如蜜，幸福到永远！",
+                    "有情人终成眷属！",
+                    "桃花朵朵开，真爱自然来！",
+                    "执子之手，与子偕老！",
+                    "月老牵红线，姻缘一线牵！"
+                ],
+                images: [
+                    { url: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800", title: "浪漫花海", desc: "爱如花开，美丽绽放" },
+                    { url: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800", title: "心心相印", desc: "两心相悦，百年好合" },
+                    { url: "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=800", title: "玫瑰之约", desc: "浪漫满屋，爱意浓浓" }
+                ]
+            },
+            health: {
+                title: "健康长寿",
+                subtitle: "身体健康 · 福寿双全 · 青春永驻",
+                icon: "🌿",
+                quotes: [
+                    "身体健康，福寿安康！",
+                    "健康是最大的财富！",
+                    "龙马精神，活力满满！",
+                    "身强体壮，百病不侵！",
+                    "养生有道，青春永驻！"
+                ],
+                images: [
+                    { url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800", title: "活力瑜伽", desc: "身心平衡，活力充沛" },
+                    { url: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800", title: "健康饮食", desc: "营养均衡，健康美味" },
+                    { url: "https://images.unsplash.com/photo-1477332552946-cfb384aeaf1c?w=800", title: "自然氧吧", desc: "亲近自然，身心愉悦" }
+                ]
+            },
+            career: {
+                title: "事业腾飞",
+                subtitle: "马到成功 · 步步高升 · 前程似锦",
+                icon: "🚀",
+                quotes: [
+                    "马到成功，事业腾飞！",
+                    "一马当先，独占鳌头！",
+                    "升职加薪，指日可待！",
+                    "事业有成，前程似锦！",
+                    "职场得意，步步高升！"
+                ],
+                images: [
+                    { url: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800", title: "商务精英", desc: "专业卓越，领导风范" },
+                    { url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800", title: "企业大厦", desc: "事业辉煌，成就非凡" },
+                    { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800", title: "成功之路", desc: "勇往直前，再创佳绩" }
+                ]
+            },
+            family: {
+                title: "家庭美满",
+                subtitle: "阖家欢乐 · 其乐融融 · 幸福安康",
+                icon: "🏠",
+                quotes: [
+                    "家和万事兴，幸福满堂！",
+                    "阖家团圆，其乐融融！",
+                    "父慈子孝，家庭和睦！",
+                    "三代同堂，天伦之乐！",
+                    "家庭美满，笑声不断！"
+                ],
+                images: [
+                    { url: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800", title: "温馨家园", desc: "家是最温暖的港湾" },
+                    { url: "https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800", title: "团圆饭", desc: "团团圆圆，幸福美满" },
+                    { url: "https://images.unsplash.com/photo-1606788168929-86d05dd2c315?w=800", title: "三代同堂", desc: "天伦之乐，代代相传" }
+                ]
+            },
+            wisdom: {
+                title: "智慧增长",
+                subtitle: "学业有成 · 金榜题名 · 才华横溢",
+                icon: "🔮",
+                quotes: [
+                    "学业有成，金榜题名！",
+                    "智慧增长，才华横溢！",
+                    "博学多才，前途无量！",
+                    "考试顺利，成绩优异！",
+                    "智慧之光照亮前程！"
+                ],
+                images: [
+                    { url: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800", title: "知识殿堂", desc: "书山有路，学海无涯" },
+                    { url: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800", title: "学业有成", desc: "金榜题名，前程似锦" },
+                    { url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800", title: "毕业典礼", desc: "学有所成，展翅高飞" }
+                ]
+            }
+        };
+
+        // Zodiac fortune data with 4 years each
+        const zodiacFortunes = {
+            rat: {
+                name: "属鼠",
+                icon: "🐭",
+                years: "1984 · 1996 · 2008 · 2020",
+                compatibility: "中吉",
+                stars: 3,
+                fortunes: {
+                    wealth: { title: "💰 财运", text: "鼠逢马年财运平稳上升，适合稳健投资。贵人相助，下半年有意外收获。避免高风险投机，守财聚财为上策。", rating: 4 },
+                    love: { title: "💖 感情", text: "桃花运势平稳，有伴者感情稳定和睦。单身者需主动出击，下半年有望遇到心仪对象。已婚者注意沟通交流。", rating: 3 },
+                    career: { title: "🚀 事业", text: "事业运势稳中有进，贵人相助事半功倍。把握上半年机会，有望升职加薪。注意团队合作，避免单打独斗。", rating: 4 },
+                    health: { title: "🌿 健康", text: "健康方面需多加注意，劳逸结合是关键。规律作息，适当运动，注意肠胃保养。保持心情愉悦，避免过度劳累。", rating: 3 }
+                },
+                lucky: { color: "金色、蓝色", number: "3、8、13", direction: "西北方、东方", month: "农历三月、十一月", flower: "百合、郁金香" }
+            },
+            ox: {
+                name: "属牛",
+                icon: "🐮",
+                years: "1985 · 1997 · 2009 · 2021",
+                compatibility: "中吉",
+                stars: 3,
+                fortunes: {
+                    wealth: { title: "💰 财运", text: "牛逢马年财运稳健，正财收入稳定。不宜进行大额投资，细水长流积少成多。下半年有望获得意外之财。", rating: 3 },
+                    love: { title: "💖 感情", text: "感情运势渐入佳境，真诚待人得真情。已婚者家庭和睦，单身者有望脱单。注意表达情感，避免过于内敛。", rating: 4 },
+                    career: { title: "🚀 事业", text: "事业稳定有进展，踏实肯干获认可。贵人运旺，有望得到提拔重用。保持勤勉态度，厚积薄发终有成。", rating: 4 },
+                    health: { title: "🌿 健康", text: "身体健康状况良好，但需注意饮食规律。适量运动增强体质，避免过度疲劳。注意肩颈保养，保持充足睡眠。", rating: 4 }
+                },
+                lucky: { color: "红色、黄色", number: "1、9、18", direction: "东南方、正南方", month: "农历六月、九月", flower: "康乃馨、向日葵" }
+            },
+            tiger: {
+                name: "属虎",
+                icon: "🐯",
+                years: "1986 · 1998 · 2010 · 2022",
+                compatibility: "大吉",
+                stars: 5,
+                fortunes: {
+                    wealth: { title: "💰 财运", text: "虎马相合财运大旺，正偏财运皆佳！投资创业皆可行，把握机会财源滚滚。横财运强，可适当尝试新领域。", rating: 5 },
+                    love: { title: "💖 感情", text: "桃花运势特别旺盛，魅力四射引人注目。单身者姻缘将至，有伴者感情升温。马年是结婚的好时机！", rating: 5 },
+                    career: { title: "🚀 事业", text: "事业运势如虎添翼，一飞冲天创佳绩！贵人相助机会多，升职加薪指日可待。适合开创新事业，大展宏图。", rating: 5 },
+                    health: { title: "🌿 健康", text: "精力充沛活力满满，龙精虎猛气势强。注意劳逸结合，避免过度消耗。保持运动习惯，身心健康乐逍遥。", rating: 4 }
+                },
+                lucky: { color: "绿色、橙色、金色", number: "2、7、16", direction: "正东方、正北方", month: "农历二月、十月", flower: "玫瑰、牡丹" }
+            },
+            rabbit: {
+                name: "属兔",
+                icon: "🐰",
+                years: "1987 · 1999 · 2011 · 2023",
+                compatibility: "吉",
+                stars: 4,
+                fortunes: {
+                    wealth: { title: "💰 财运", text: "兔逢马年财运佳，正财偏财都不错。投资理财需谨慎稳健，避免贪多冒进。下半年财运更旺，把握机会。", rating: 4 },
+                    love: { title: "💖 感情", text: "感情运势甜蜜美满，桃花朵朵为君开。单身者有望遇真爱，有伴者关系更亲密。适合表白或求婚。", rating: 4 },
+                    career: { title: "🚀 事业", text: "工作顺利有进展，创意思维获认可。贵人相助事业兴，新项目有望成功。保持低调谦逊，步步高升。", rating: 4 },
+                    health: { title: "🌿 健康", text: "身体健康状态佳，精神饱满活力足。注意保养皮肤，规律作息。适量运动保健康，马年身心皆愉悦。", rating: 4 }
+                },
+                lucky: { color: "粉色、白色、紫色", number: "4、6、15", direction: "西南方、东北方", month: "农历四月、八月", flower: "兰花、茉莉" }
+            },
+            dragon: {
+                name: "属龙",
+                icon: "🐲",
+                years: "1988 · 2000 · 2012 · 2024",
+                compatibility: "中吉",
+                stars: 4,
+                fortunes: {
+                    wealth: { title: "💰 财运", text: "龙马精神财运通，投资经营皆亨通。正财稳定，偏财有望。适合拓展业务，开源节流两相宜。", rating: 4 },
+                    love: { title: "💖 感情", text: "感情运势有起伏，需要耐心来经营。已婚者多沟通避免争执，单身者下半年桃花渐旺。真心相待终有成。", rating: 3 },
+                    career: { title: "🚀 事业", text: "事业运势如日中天，龙马精神创新高！领导赏识，同事支持。适合承担重要项目，功成名就在马年。", rating: 5 },
+                    health: { title: "🌿 健康", text: "精力旺盛身体好，但需注意劳逸平衡。避免熬夜过度，注意肝脏保养。保持运动习惯，健康长久。", rating: 4 }
+                },
+                lucky: { color: "紫色、金色、红色", number: "5、8、17", direction: "正南方、西北方", month: "农历五月、十二月", flower: "龙胆花、芍药" }
+            },
+            snake: {
+                name: "属蛇",
+                icon: "🐍",
+                years: "1989 · 2001 · 2013 · 2025",
+                compatibility: "小吉",
+                stars: 2,
+                fortunes: {
+                    wealth: { title: "💰 财运", text: "蛇逢马年财运平平，需谨慎理财。不宜冒险投资，守财为上策。下半年运势好转，可把握小机会。", rating: 3 },
+                    love: { title: "💖 感情", text: "感情需要多用心经营，沟通是关键。已婚者避免冷战，单身者需主动出击。耐心等待，缘分将至。", rating: 3 },
+                    career: { title: "🚀 事业", text: "工作运势平稳，需要耐心坚持。避免与人争执，保持低调。贵人运一般，靠自身努力更靠谱。", rating: 3 },
+                    health: { title: "🌿 健康", text: "健康需要格外注意，规律作息是关键。注意心血管保养，清淡饮食。适量运动，避免久坐不动。", rating: 3 }
+                },
+                lucky: { color: "黑色、红色、黄色", number: "2、9、11", direction: "东北方、正西方", month: "农历一月、七月", flower: "蝴蝶兰、仙人掌" }
+            },
+            horse: {
+                name: "属马",
+                icon: "🐴",
+                years: "1990 · 2002 · 2014 · 2026",
+                compatibility: "本命年",
+                stars: 3,
+                fortunes: {
+                    wealth: { title: "💰 财运", text: "本命年财运需格外谨慎，守财重于求财。避免大额投资和借贷，稳健理财保平安。下半年运势渐好。", rating: 3 },
+                    love: { title: "💖 感情", text: "感情运势较为平稳，珍惜眼前人。本命年不宜大动感情，已有伴侣者好好经营，单身者不必强求。", rating: 3 },
+                    career: { title: "🚀 事业", text: "事业发展稳中求进，避免冒进冲动。本命年磨砺性情，坚持不懈终有成。佩戴红色饰品化解太岁。", rating: 3 },
+                    health: { title: "🌿 健康", text: "本命年健康要格外重视，定期体检很重要。注意交通安全，避免危险运动。佩戴本命年红绑保平安。", rating: 3 }
+                },
+                lucky: { color: "红色、紫色、棕色", number: "3、7、12", direction: "正北方、东南方", month: "农历正月、六月", flower: "马蹄莲、红掌" }
+            },
+            goat: {
+                name: "属羊",
+                icon: "🐐",
+                years: "1991 · 2003 · 2015 · 2027",
+                compatibility: "大吉",
+                stars: 5,
+                fortunes: {
+                    wealth: { title: "💰 财运", text: "羊马六合财运旺，正偏财运皆大吉！投资理财收益丰，贵人相助财路广。马年是发财的绝佳时机！", 
